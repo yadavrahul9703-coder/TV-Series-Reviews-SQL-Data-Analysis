@@ -1,0 +1,119 @@
+TV Series Reviews – SQL Data Analysis
+1. Project Overview
+This project focuses on designing and analysing a relational database using MySQL. The database contains information about TV series, reviewers, and their ratings.
+
+The main objective is to analyse reviewer activity, evaluate TV series performance, calculate average ratings, and identify series that have not received any reviews.
+
+This project demonstrates practical SQL skills through table creation, relationships, data insertion, joins, aggregate functions, and conditional statements.
+2. Database Structure
+The database consists of three tables:
+Table	Description
+reviewers	Stores reviewer information
+series	Stores TV series details
+reviews	Stores ratings submitted by reviewers
+
+Entity Relationship
+
+reviewers                 series
+---------                 ------
+id (PK)                   id (PK)
+first_name                title
+last_name                 released_year
+       \                  genre
+        \                /
+         \              /
+          reviews
+          -------
+          id (PK)
+          rating
+          series_id (FK)
+          reviewer_id (FK)
+  
+
+
+The reviews table acts as a junction table, establishing a many-to-many relationship between reviewers and TV series.
+- One reviewer can review multiple series.
+- One series can receive reviews from multiple reviewers.
+3. SQL Concepts Used
+- Database creation and selection
+- CREATE TABLE and INSERT INTO
+- Primary Keys and Foreign Keys
+- INNER JOIN and LEFT JOIN
+- GROUP BY and ORDER BY
+- Aggregate functions: COUNT(), MIN(), MAX(), AVG()
+- ROUND() for decimal precision
+- CASE WHEN for conditional categorisation
+- CONCAT() for combining reviewer names
+- IS NULL for identifying missing reviews
+4. Data Analysis & Business Questions
+The project answers the following analytical questions:
+
+1. TV Series Ratings
+
+Retrieve TV series titles and their ratings, sorted from highest to lowest.
+
+2. Average Rating by TV Series
+
+Calculate the average rating for each TV series and arrange the results in ascending order.
+
+3. Reviewer Performance
+
+Display reviewer names alongside their individual ratings, sorted from highest to lowest.
+
+4. Unreviewed TV Series
+
+Identify TV series that have not received any reviews using LEFT JOIN and IS NULL.
+
+5. Genre-Wise Rating Analysis
+
+Calculate the average rating for each genre to understand which genres perform best.
+
+6. Reviewer Activity Analysis
+
+Generate reviewer performance summaries containing:
+- Total number of reviews
+- Minimum rating
+- Maximum rating
+- Average rating
+- Active/Inactive classification
+7. Reviewer-Level Review Details
+
+Combine TV series titles, individual ratings, and reviewer names into a single result using multiple joins.
+5. Key Learning Outcomes
+Through this project, I gained practical experience in:
+- Designing relational databases.
+- Understanding primary and foreign key relationships.
+- Working with multiple tables using SQL JOINs.
+- Analysing data using aggregate functions.
+- Identifying missing records using LEFT JOIN.
+- Creating conditional classifications using CASE statements.
+- Writing analytical queries to extract meaningful insights.
+6. Tools & Technologies
+Tool	Purpose
+MySQL	Database management
+MySQL Workbench	SQL development and execution
+SQL	Data querying and analysis
+GitHub	Project documentation and version control
+
+7. Project Repository Structure
+TV-Series-Reviews-SQL/
+│
+├── README.md
+├── tv_series_reviews.sql
+└── screenshots/
+    ├── reviewers_table.png
+    ├── series_table.png
+    ├── reviews_table.png
+    └── analysis_results.png
+
+
+8. Conclusion
+This project demonstrates how SQL can be used to build relational databases and perform meaningful data analysis.
+
+It helped strengthen my understanding of relational database design, multi-table queries, data aggregation, and analytical problem-solving.
+
+Author: Rahul Yadav
+
+Project Type: SQL Data Analysis
+
+Database: MySQL
